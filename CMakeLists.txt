@@ -10,7 +10,7 @@ if(POLICY CMP0091)
 endif()
 
 project(Foundation
-  LANGUAGES C Swift)
+  LANGUAGES C)
 enable_testing()
 
 # NOTE(compnerd) default to /MD or /MDd by default based on the configuration.
@@ -49,7 +49,7 @@ endif()
 
 find_package(ICU COMPONENTS uc i18n REQUIRED OPTIONAL_COMPONENTS data)
 
-include(SwiftSupport)
+#include(SwiftSupport)
 include(GNUInstallDirs)
 include(XCTest)
 
@@ -83,7 +83,7 @@ target_include_directories(CoreFoundation PRIVATE
   ${CMAKE_BINARY_DIR}/uuid-headers
   ${CMAKE_CURRENT_BINARY_DIR}/CoreFoundation.framework/Headers)
 
-add_subdirectory(Sources)
+#add_subdirectory(Sources)
 if(ENABLE_TESTING)
   find_package(XCTest CONFIG REQUIRED)
   add_subdirectory(Tests)
